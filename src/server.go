@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	port = ":8080" // listen port
+	port = "8080" // listen port
 )
 
 func handleClient(conn net.Conn)  {
@@ -31,7 +31,7 @@ func handleClient(conn net.Conn)  {
 
 func main() {
 	// port監視
-	tcpAddr, err := net.ResolveTCPAddr("tcp", port) // end point of L4
+	tcpAddr, err := net.ResolveTCPAddr("tcp", ":" + port) // end point of L4
 	if err != nil {
 		log.Fatal(err)
 	}
